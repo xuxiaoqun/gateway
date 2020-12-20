@@ -9,7 +9,7 @@ spring:
         - id: blog
           uri: lb://xzc-user/
           predicates:
-            # Æ¥ÅäÂ·¾¶×ª·¢
+            # åŒ¹é…è·¯å¾„è½¬å‘
             - Path=/user/**
           filters:
             - StripPrefix=1
@@ -19,6 +19,6 @@ spring:
           lower-case-service-id: true
 
 
-# ¶Ë¿ÚºÅ
+# ç«¯å£å·
 server:
   port: 9090
