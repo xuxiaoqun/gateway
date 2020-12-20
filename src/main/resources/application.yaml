@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: xzc-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.65.67:8848
+    gateway:
+      routes:
+        - id: blog
+          uri: lb://xzc-user/
+          predicates:
+            # 匹配路径转发
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+
+# 端口号
+server:
+  port: 9090
